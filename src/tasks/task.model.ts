@@ -10,6 +10,6 @@ export class Task {
   @Column({ nullable: false })
   description: string;
 
-  @Column({ default: true, nullable: false })
+  @Column({ default: false, nullable: false })
   done: boolean;
 }
