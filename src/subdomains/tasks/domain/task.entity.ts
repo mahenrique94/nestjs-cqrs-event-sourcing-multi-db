@@ -20,7 +20,7 @@ export class Task implements IEntity {
 
   public setId(id: number): void {
     if (!id) {
-      new DomainInvariantException(
+      throw new DomainInvariantException(
         'Property `id` is required to create a task',
       );
     }
@@ -30,7 +30,7 @@ export class Task implements IEntity {
 
   public setdescription(description: string): void {
     if (!description) {
-      new DomainInvariantException(
+      throw new DomainInvariantException(
         'Property `description` is required to create a task',
       );
     }
@@ -39,12 +39,6 @@ export class Task implements IEntity {
   }
 
   public setDone(done: boolean): void {
-    if (!done) {
-      new DomainInvariantException(
-        'Property `done` is required to create a task',
-      );
-    }
-
     this._done = done;
   }
 

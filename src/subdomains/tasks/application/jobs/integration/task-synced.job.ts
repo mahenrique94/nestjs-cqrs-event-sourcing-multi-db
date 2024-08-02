@@ -22,6 +22,7 @@ export class TaskSyncedJob {
       this.logger.log('[TaskSyncedJob] precessing event');
       this.logger.log(JSON.stringify(event));
 
+      // Dispatch a new event into Rabbit or Kafka or anything...
       await this.outboxRepository.remove(event.id);
     }
   }
